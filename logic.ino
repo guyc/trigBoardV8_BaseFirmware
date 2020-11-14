@@ -60,7 +60,7 @@ bool pushLogic() {
 
   //check to see if we need wifi for anything
   // mqtt or ifttt or pushsafer or pushover, udp is a private network configured separately
-  if (strcmp(config.iftttEnable, "t") == 0 || strcmp(config.mqttEnable, "t") == 0 || strcmp(config.pushSaferEnable, "t") == 0 || strcmp(config.pushOverEnable, "t") == 0) {
+  if (strcmp(config.iftttEnable, "t") == 0 || strcmp(config.mqttEnable, "t") == 0 || strcmp(config.pushSaferEnable, "t") == 0 || strcmp(config.pushOverEnable, "t") == 0 || true) {
     wiFiNeeded = true;
   }
 

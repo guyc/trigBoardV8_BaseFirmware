@@ -1,6 +1,6 @@
 #include "includes.h"
 
-const char fwVersion[] = "10/10/20";
+const char fwVersion[] = "excel-1.0";
 
 void setup() {
   pinMode(ESPlatchPin, OUTPUT);
@@ -11,13 +11,14 @@ void setup() {
   loadConfiguration(filename, config);
   rtcInit(config.timerCountDown, false);
   Serial.println(getBattery(), 2);
-  if (pushLogic()) { //decide if push will occur or nt and what message will be
+  if (pushLogic()) { //decide if push will occur or not and what message will be
     if (wiFiNeeded) {
       if (connectWiFi()) {
         pushOver();
         pushSafer();
         ifttt();
         mqtt();
+        webhook();
       }
     }
     udp();
